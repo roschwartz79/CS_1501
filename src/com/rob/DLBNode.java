@@ -6,9 +6,11 @@ public class DLBNode {
     private DLBNode next_child, next_sibling, previous_sibling, previous_child, parent_node; //The 4 directions the node could go
     private boolean isWord;
     private boolean starterNode;
+    private int frequency;
 
     //Constructor to set all of the variables each node with have
     public DLBNode(){
+        frequency = 0;
         word = "";
         starterNode = false;
         isWord = false;
@@ -20,6 +22,14 @@ public class DLBNode {
     }
 
     //getters and setters for all of the parameters of each node
+    public int getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(int frequency) {
+        this.frequency = frequency;
+    }
+
     public DLBNode getParent_node() {
         return parent_node;
     }

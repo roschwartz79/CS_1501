@@ -74,8 +74,18 @@ public class DLBMethods {
             //mark the end of a word
             if(i+1 == wordToAdd.length()){
                 //mark the word as true and store the string value in the node that is the end of the word
-                currentNode.setWord(true);
-                currentNode.setWord(wordToAdd);
+                //if it is not already a word in the dictionary, add the flag and the word, and set the frequency to 1
+                if ( !currentNode.isWord()) {
+                    currentNode.setWord(true);
+                    currentNode.setWord(wordToAdd);
+                    currentNode.setFrequency(1);
+                }
+                //if it is already in the trie, increase the frequency by 1
+                else{
+                    currentNode.setFrequency(currentNode.getFrequency() + 1);
+                    System.out.println("The current frequency is " + wordToAdd + " " + currentNode.getFrequency());
+                }
+                //For debugging
 //                System.out.println("End of the word " + currentNode.getPrevious_child().isWord());
             }
         }

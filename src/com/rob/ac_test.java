@@ -1,15 +1,15 @@
 package com.rob;
 
-import com.sun.org.apache.xerces.internal.util.SymbolTable;
-
 import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class ac_test {
 
     //Initialize the dictionary trie and user history trie as globals in the main file
     private static File dictionaryFile = new File("src/com/rob/dictionary.txt");
-    private static  File userHistoryFile = new File("src/com/rob/userhistory.txt");
+    private static  File userHistoryFile = new File("src/com/rob/user_dictionary.txt");
 
     public static DLBTrie userTrie;
 
@@ -20,15 +20,18 @@ public class ac_test {
 
     public static boolean words_in_user_trie = false;
 
+    //create the hashmap to store the word and the frequency for each word in the user history trie
+    public static Map <String, Integer> frequencyMap = new HashMap<>();
+
     public static void main(String[] args) throws IOException {
 
         //get the user history trie setup
         //see if we need to create a new file
         if (userHistoryFile.createNewFile())
         {
-            System.out.println("userhistory.txt is created!");
+            System.out.println("user_dictionary.txt is created!");
         } else {
-            System.out.println("userhistory.txt already exists!");
+            System.out.println("user_dictionary.txt already exists!");
             //if it already exists, add all of the words in the file to the trie
         }
 
@@ -37,10 +40,29 @@ public class ac_test {
         //populate the user history trie
         userTrie = new DLBTrie();
 
+        //read in all of the words in the user_dictionary.txt file, add ot the trie and hashmap
         while (parse.hasNextLine()){
             words_in_user_trie = true;
             String userWord = parse.nextLine();
+            //add the word to the user trie from the file
             DLBMethods.addWord(userTrie, userWord);
+
+            //populate the frequency hashmap from the file
+            //if the key is already in the hashmap, increase the frequency by 1
+            if (frequencyMap.containsKey(userWord)){
+                System.out.println("Updating a value for word " + userWord);
+                //get the current frequency
+
+                int frequency =frequencyMap.get(userWord);
+                System.out.println("Old frequency "+ frequency);
+                frequencyMap.replace(userWord, frequency, frequency + 1);
+                System.out.println("Updated frequency!");
+            }
+            //if the key is not in the hashmap and set the frequency to 1
+            else{
+                System.out.println("Word was not in the hashmap, frequency added!");
+                frequencyMap.put(userWord, 1);
+            }
         }
 
         //start the program
@@ -134,7 +156,7 @@ public class ac_test {
                 if (words_in_user_trie) {
                     for (int j = 0; j < userWord.length(); j++) {
 
-                        // get to the head node of the user history trie
+                        //get to the head node of the user history trie
                         char character = userWord.charAt(j);
                         String current_letter = String.valueOf(character);
 
