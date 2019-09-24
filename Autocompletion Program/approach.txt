@@ -1,0 +1,6 @@
+My approach to tracking the user history was to implement another DLB and use a file called user_dictionary.txt.
+Whenever a word is found by the user, the word is added to the user history trie (ac_test.java line 337) and added to a new line in the
+user_history.txt file (ac_test.java line 346). Frequency is tracked as part of the Node where a word is complete. I implemented the comparable
+class and compared the frequencies (DLBNode.java line 156), then sorted the Array of predictions from the user that way (ac_test.java line 254)
+History is tracked between iterations of the program through reading in the file, if a word is being added, but has already been added,
+the frequency will increase (DLBMethods.java line 102). This method is robust and effective, and it works.
