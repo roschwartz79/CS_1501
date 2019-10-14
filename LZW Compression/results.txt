@@ -1,0 +1,21 @@
+Compression Results for Rob Schwartz
+IN KB
+
+File				Original File Size(KB)		Compressed File Size Original		Compression Ratio (Original/Compressed)		Compressed File Size Normal		Compression Ratio (Original/Compressed)		Compressed File Size Reset Mode		Compression Ratio (Original/Compressed)		Compressed File Size Monitor Mode		Compression Ratio (Original/Compressed)		7ZIP		Compression Ratio (Original/Compressed)
+all.tar				2960						1804								1.64										1751							1.53										1151								2.57										2097									1.41										810			3.65
+assig2.doc			85							73									1.16										40								2.125										40									2.125										40										2.125										21			4.04
+bmps.tar			1080						904									1.19										80								13.5										80									13.5										80										13.5										53			20.337
+code.txt			71							31									2.29										24								2.95										24									2.95										24										2.95										14			5.07
+code2.txt			57							24									2.375										21								2.71										21									2.71										21										2.71										13			4.38
+edit.exe			231							245									.942										153								1.50										149									1.55										153										1.509										96			2.40
+frosty.jpg			124							174									.712										160								.775										168									.738										160										.775										124			1
+gone_fishing.bmp	17							10									1.7 										9								1.88										9									1.88										9										1.88										8			2.125
+large.txt			1193						591									2.01										491								2.42										516									2.31										491										2.42										394			3.02
+Lego-big.gif		92							126									.73 										120								.7666										120									.7666										120										.7666										91			1.01
+medium.txt			25							13									1.92										13								1.92										13									1.92										13										1.92										11			2.2727
+texts.tar			1350						909									1.48										584								2.311										577									2.339										584										2.311										427			3.16
+wacky.bmp			901							5									180.5										4								225.25										4									225.5										4		`								225.5										3			300.33
+winnt256.bmp		154							156									.987										62								2.483										62									2.483										62										2.483										43			3.581
+
+
+
