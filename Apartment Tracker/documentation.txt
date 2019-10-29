@@ -1,0 +1,14 @@
+Rob Schwartz Documentation and Justification
+Project 3- AptTracker
+
+In order to keep my runtime minimal for apartment searching, adding and removal, I used two indirection hashmaps. The first, called indirection, keeps
+track of the highest sqft/lowest rent by use of a hashmap. The key is the city name and the value is the location of the lowest rent in the key's city.
+So when a command is sent to retrieve the lowest rent apartment in a specific city, the city name is hashed in O(length of city) time and then the index
+in the heap is found in O(1) time. This satisfies the requirement for runtime. For update and delete, I have another indirection data structure, which is
+a nested hashmap data structure. The first hashmap has a key of the address and the value of a reference to the second hashmap. The second hashmap has a key
+of the apartment number and a value of a reference to a third hashmap. The third hashmap has a key of the zipcode and the value containing the index at which that
+apartment is stored at in the min or max heap, as this data structure is in both. This means that given an address, apartment number, and zipcode, the index
+can be found in O(1) time, and then any action that needs to be performed on it. For removal, the worst case is that the apartment is swapped into the top position
+needs to be swapped all the way back down the heap, which will give us O(log(n)) runtime, which satisfies the runtime requirement. Adding an apartment also is a
+worst case of swapping all the way to the root of the heap, which will give us O(log(n)), satisfying the runtime requirement. Lastly, retrieving the min rent or 
+the max sqft apartment, is O(1) runtime, as all I do is get the 0th index in the heap in the min or max heap. 

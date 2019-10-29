@@ -1,0 +1,10 @@
+# Street address:Apt Number:City:Zip:Price:SqFt
+Will st.:15:Dalton:18414:250:1000
+2 st.:5:Pittsburgh:15232:500:500
+Forbes ave.:112:Pittsburgh:15213:700:1100
+Fifth ave.:2G:Pittsburgh:15232:800:800
+5 st.:8:Pittsburgh:15212:400:300
+1 st.:613:Houston:77007:200:300
+2 st.:2:Houston:77007:500:500
+3 st.:9A:Houston:70008:700:1000
+4 st.:4C:Chicago:70008:800:800
